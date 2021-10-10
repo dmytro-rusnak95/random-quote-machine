@@ -1,0 +1,110 @@
+body {
+  background-color: #282c34;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.quote__text {
+  max-width: 900px;
+  position: relative;
+  font-size: 48px;
+  color: #fff;
+  margin-bottom: 32px;
+}
+
+.quote__text:not(.quote__text--loading):not(.quote__text--error)::before {
+  content: '"';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: -60px;
+  top: -30px;
+  font-size: 120px;
+}
+
+.quote__author {
+  position: relative;
+  color: #fff;
+  font-size: 36px;
+}
+
+.quote__author::before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 4px;
+  background: #fff;
+  top: -5px;
+  left: 0;
+}
+
+.quote-controls {
+  display: flex;
+  justify-content: center;
+}
+
+.quote__btn {
+  margin-right: 35px;
+  border: 2px solid #fff;
+  padding: 0 15px;
+  line-height: 60px;
+  background: transparent;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.quote__share {
+  border: 2px solid #fff;
+  padding-left: 80px;
+  padding-right: 15px;
+  background-image: url("./twitter.svg");
+  background-size: 50px auto;
+  background-repeat: no-repeat;
+  background-position: 15px center;
+  line-height: 65px;
+  vertical-align: middle;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 24px;
+}
+
+@media screen and (max-width: 767px) {
+  .quote-wrapper {
+    margin-bottom: 60px;
+  }
+  .quote__text {
+    font-size: 32px;
+  }
+
+  .quote__author {
+    font-size: 24px;
+  }
+
+  .quote__btn {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .quote-controls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .quote-controls button,
+  .quote-controls a {
+    box-sizing: border-box;
+    display: block;
+    width: 250px;
+  }
+}
